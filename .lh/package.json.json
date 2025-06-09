@@ -1,0 +1,26 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1749425838968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749425862320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n {\n   \"name\": \"01-fundamentos\",\n   \"version\": \"1.0.0\",\n-  \n+  ¨\n   \"description\": \"\",\n   \"main\": \"src/server.js\",\n   \"scripts\": {\n     \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n"
+                },
+                {
+                    "date": 1749426272160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   \"description\": \"\",\n   \"main\": \"src/server.js\",\n   \"scripts\": {\n   \"start\": \"node src/server.js\",\n-  \"dev\": \"node --w src/server.js\",\n+  \"dev\": \"node --wa src/server.js\",\n     \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n   },\n   \"author\": \"\",\n   \"license\": \"ISC\"\n"
+                }
+            ],
+            "date": 1749425838968,
+            "name": "Commit-0",
+            "content": "{\n  \"name\": \"01-fundamentos\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"src/server.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\"\n}\n"
+        }
+    ]
+}
