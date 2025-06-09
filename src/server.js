@@ -27,23 +27,28 @@ const server = http.createServer((req, res) => {
 
 
   if(method === "GET" && url === "/users") {
-    res
+    return res
     .setHeader("Content-Type", "application/json")
-    .statusCode(200)
     .end(JSON.stringify(users));
-    return;
   }
 
   if(method === "POST" && url === "/users") {
-    res.writeHead(201, { "Content-Type": "application/json" });
+
     const user = {
       id: users.length + 1,
       name: `User ${users.length + 1}`,
     };
     users.push(user)
-    res.end("Criação de usuários\n");
-    return;
+    return res
+    .writeHead(201)
+    .end();
   }
+
+  return res
+    .writeHead(404, {
+      "Content-Type": "application/json",
+    })
+    .end(JSON.stringify({ error: "Not Found" }));
 
 });
 
