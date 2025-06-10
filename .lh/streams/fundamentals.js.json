@@ -1,0 +1,26 @@
+{
+    "sourceFile": "streams/fundamentals.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1749516799596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749516807022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-process.s\n+process.st\n"
+                },
+                {
+                    "date": 1749516968594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import{}\n+import{} f\n"
+                }
+            ],
+            "date": 1749516799596,
+            "name": "Commit-0",
+            "content": "process\n"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "sourceFile": "streams/fake-upload-http-stream.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1749529568501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1749529580381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import { Readable, Writable, Transform } from \"node:stream\";\n+\n class OneToHundredStream extends Readable {\n   current = 1;\n   constructor(options) {\n     super(options);\n"
+                },
+                {
+                    "date": 1749529625341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Readable, Writable, Transform } from \"node:stream\";\n+import { Readable } from \"node:stream\";\n \n class OneToHundredStream extends Readable {\n   current = 1;\n   constructor(options) {\n@@ -18,4 +18,6 @@\n       }\n     },1000);\n   }\n }\n+\n+fe\n"
+                },
+                {
+                    "date": 1749529636406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,5 @@\n     },1000);\n   }\n }\n \n-fe\n+fetch(\"http://localhost:3000/users\", {)\n"
+                },
+                {
+                    "date": 1749529659460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,11 @@\n     },1000);\n   }\n }\n \n-fetch(\"http://localhost:3000/users\", {)\n+fetch(\"http://localhost:3000\", {\n+  method: \"POST\",\n+  body: new OneToHundredStream(),\n+  headers: {\n+    \"Content-Type\": \"application/json\",\n+  },\n+})\n"
+                },
+                {
+                    "date": 1749529983325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,5 @@\n \n fetch(\"http://localhost:3000\", {\n   method: \"POST\",\n   body: new OneToHundredStream(),\n-  headers: {\n-    \"Content-Type\": \"application/json\",\n-  },\n })\n"
+                },
+                {
+                    "date": 1749530141591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,6 @@\n \n fetch(\"http://localhost:3000\", {\n   method: \"POST\",\n   body: new OneToHundredStream(),\n+  duplex: \"half\"\n })\n"
+                },
+                {
+                    "date": 1749530327111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n \n   _read(size) {\n     setTimeout(() => {\n       const i = this.current++;\n+      console\n       if (i > 100) {\n         this.push(null); // No more data\n       } else {\n         const buffer = Buffer.from(String(i));\n"
+                },
+                {
+                    "date": 1749530333304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n   _read(size) {\n     setTimeout(() => {\n       const i = this.current++;\n-      console\n+      console.log(`Pushing number: ${i}`);\n       if (i > 100) {\n         this.push(null); // No more data\n       } else {\n         const buffer = Buffer.from(String(i));\n"
+                }
+            ],
+            "date": 1749529568501,
+            "name": "Commit-0",
+            "content": "class OneToHundredStream extends Readable {\n  current = 1;\n  constructor(options) {\n    super(options);\n    this.current = 1;\n  }\n\n  _read(size) {\n    setTimeout(() => {\n      const i = this.current++;\n      if (i > 100) {\n        this.push(null); // No more data\n      } else {\n        const buffer = Buffer.from(String(i));\n        this.push(buffer); // Push current number as a string\n      }\n    },1000);\n  }\n}\n"
+        }
+    ]
+}
